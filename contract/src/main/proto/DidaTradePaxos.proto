@@ -1,0 +1,57 @@
+//
+// Protocol buffers definition for DidaTrade Paxos Service
+//
+syntax = "proto3";
+package didatrade;
+
+message PhaseOneRequest {
+  int32 instance        = 1;
+  int32 requestballot	= 2;
+}
+
+message PhaseOneReply {
+  int32 instance        = 1;
+  int32 serverid        = 2;
+  int32 requestballot	= 3;
+  bool  accepted 	= 4;
+  int32 value           = 5;
+  int32 valballot       = 6;
+  int32 maxballot       = 7;
+}
+
+message PhaseTwoRequest {
+  int32 instance        = 1;
+  int32 requestballot   = 2;
+  int32 value           = 3;
+}
+
+message PhaseTwoReply {
+  int32 instance        = 1;
+  int32 serverid        = 2;
+  int32 requestballot   = 3;
+  bool  accepted        = 4;
+  int32 maxballot       = 5;
+}
+
+message LearnRequest {
+  int32 instance   = 1;
+  int32 ballot     = 2;
+  int32 value      = 3;
+}
+
+message LearnReply {
+  int32 instance   = 1;
+  int32 ballot     = 2;
+}
+
+service DidaTradePaxosService {
+  rpc phaseone (PhaseOneRequest) returns (PhaseOneReply);
+  rpc phasetwo (PhaseTwoRequest) returns (PhaseTwoReply);
+  rpc learn    (LearnRequest)    returns (LearnReply);
+}
+
+
+
+
+
+

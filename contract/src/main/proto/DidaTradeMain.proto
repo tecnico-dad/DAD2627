@@ -1,0 +1,79 @@
+//
+// Protocol buffers definition for DidaTrade Main Service
+//
+syntax = "proto3";
+package didatrade;
+
+message PopulateRequest {
+  int32 reqid     = 1;
+  int32 quantity  = 2;
+}
+
+message PopulateReply {
+  int32 reqid   = 1;
+  bool  result	= 2;
+}
+
+message AddUserRequest {
+  int32 reqid   = 1;
+  int32 userid  = 2;
+  int32 cash    = 3;
+  int32 stock   = 4;
+}
+
+message AddUserReply {
+  int32 reqid   = 1;
+  bool  result	= 2;
+}
+
+message SellRequest {
+  int32 reqid    = 1;
+  int32 userid   = 2;
+  int32 quantity = 3;
+}
+
+message SellReply {
+  int32 reqid   = 1;
+  bool  result	= 2;
+}
+
+message BuyRequest {
+  int32 reqid    = 1;
+  int32 userid   = 2;
+  int32 quantity = 3;
+}
+
+message BuyReply {
+  int32 reqid   = 1;
+  bool  result	= 2;
+}
+
+message BalanceRequest {
+  int32 reqid    = 1;
+  int32 userid   = 2;
+}
+
+message BalanceReply {
+  int32 reqid   = 1;
+  bool  result	= 2;
+  int32 balance = 3;
+}
+
+message DumpRequest {
+  int32 reqid      = 1;
+}
+
+message DumpReply {
+  int32 reqid   = 1;
+  bool  result	= 2;
+}
+
+service DidaTradeMainService {
+  rpc populate (PopulateRequest) returns (PopulateReply);
+  rpc adduser  (AddUserRequest)  returns (AddUserReply);
+  rpc sell     (SellRequest)     returns (SellReply);
+  rpc buy      (BuyRequest)      returns (BuyReply);
+  rpc balance  (BalanceRequest)  returns (BalanceReply);
+  rpc dump     (DumpRequest)     returns (DumpReply);
+}
+

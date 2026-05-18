@@ -1,0 +1,46 @@
+//
+// Protocol buffers definition for DidaTrade Master Service
+//
+syntax = "proto3";
+package didatrade;
+
+message NewBallotRequest {
+  int32 reqid           = 1;
+  int32 newballot       = 2;
+  int32 completedballot = 3;
+}
+
+message NewBallotReply {
+  int32 reqid           = 1;
+  int32 completedballot = 2;
+}
+
+message ActivateRequest {
+  int32 reqid           = 1;
+  int32 completedballot = 2;
+}
+
+message ActivateReply {
+  int32 reqid   = 1;
+  bool  ack     = 2;
+}
+
+message SetDebugRequest {
+  int32 reqid  = 1;
+  int32 mode   = 2;
+}
+
+message SetDebugReply {
+  int32 reqid   = 1;
+  bool ack      = 2;
+}
+
+service DidaTradeMasterService {
+  rpc newballot (NewBallotRequest) returns (NewBallotReply);
+  rpc activate  (ActivateRequest)  returns (ActivateReply);
+  rpc setdebug  (SetDebugRequest)  returns (SetDebugReply);
+}
+
+
+
+

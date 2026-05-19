@@ -13,6 +13,8 @@ public class ConfigurationScheduler {
     }
 
     public ConfigurationScheduler(char option) {
+	if (option == 'C')
+	    s = new ScheduleC ();
 	if (option == 'B')
 	    s = new ScheduleB ();
 	else 
@@ -24,6 +26,8 @@ public class ConfigurationScheduler {
 	    s = new ScheduleA ();
 	else if (option == 'B')
 	    s = new ScheduleB ();   
+ 	else if (option == 'C')
+	    s = new ScheduleC ();   
     }
     
     public List<Integer> learners(int ballot) {

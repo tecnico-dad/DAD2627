@@ -15,7 +15,7 @@ It falls onto the students to **NOT DEVELOP ON A FORK THE PROJECT**
 
 # Requirements
 
-The project requires the following packages:
+The project requires the following packages (you are free to use other versions of java):
 
 - Java 22
 - Maven 3.8.4
@@ -69,7 +69,6 @@ Where you must fill in the following arguments:
 - **{id}**: Sequential id of the server. Current implementation requires servers to be ID'ed starting from *0* to *N-1*
   servers.
 - **{scheduler}**: The scheduler used for reconfiguration (use 'A' to start)
-- **{max}**: The maximum number of participants in a meeting
 
 ## Client
 

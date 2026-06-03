@@ -276,7 +276,7 @@ public class DidaTradeApp {
 
 	while (counter < this.loop_size) {
 	    if (task == -1)
-		next_action = rnd.nextInt(1);
+		next_action = rnd.nextInt(2);
 
 	    int uid      = rnd.nextInt(this.user_range);
 	    int quantity = rnd.nextInt(100);
@@ -349,9 +349,11 @@ public class DidaTradeApp {
             switch (mainCommand) {
 	    case "help":
 		System.out.println("\thelp");
-		System.out.println("\tpopulate n_users");
-		System.out.println("\tbuy uid quanity");
-		System.out.println("\tsell uid quanity");
+		System.out.println("\tpopulate <n_users>");
+		System.out.println("\tadd <uid> <wallet> <stock>");
+		System.out.println("\tbuy <uid> <quantity>");
+		System.out.println("\tsell <uid> <quantity>");
+		System.out.println("\tbalance <uid>");
 		System.out.println("\tshow");
 		System.out.println("\tbuyloop");
 		System.out.println("\tsellloop");

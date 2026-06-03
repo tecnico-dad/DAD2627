@@ -60,7 +60,7 @@ The project is composed of three main components:
 
 The servers run the base implementation. They are executed running the following command in the *server* directory:
 
-`mvn exec:java -Dexec.args="{port} {id} {scheduler} {max}"`
+`mvn exec:java -Dexec.args="{port} {id} {scheduler}"`
 
 Where you must fill in the following arguments:
 

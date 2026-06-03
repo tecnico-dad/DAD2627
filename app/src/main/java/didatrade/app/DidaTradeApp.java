@@ -530,7 +530,7 @@ public class DidaTradeApp {
 	// set client id
 	this.client_id =  Integer.parseInt(args[0]);
 	if ((this.client_id < 1) || (this.client_id > 99)) {
-	    System.err.println("Error: client id needs to be in interval [0,99].");
+	    System.err.println("Error: client id needs to be in interval [1,99].");
 	    return;
 	}
 
